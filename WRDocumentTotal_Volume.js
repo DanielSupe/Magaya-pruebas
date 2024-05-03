@@ -752,7 +752,7 @@ function calculateMeasurementUnits(itemObj, unitSymbol){
     if(itemsListTotal){ 	
         dbx.using(itemsListTotal).iterate(function(each){
             var decimalsTotal = each.VolumePrecision || 3;
-            // var unitSymbolTotal = each.VolumeUnit;
+            // var unitSymbolTotal = each.VolumeUnit;      //"5.68" => 5.68
              VolumeTotal += Number(showVolume(each.Volume, decimalsTotal, dbx.Uom.Volume.CubicFoot).match(/\d+(\.\d+)?/g)[0]);
         });
 
