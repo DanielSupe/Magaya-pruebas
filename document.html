@@ -1,0 +1,181 @@
+<html>
+          <head>
+              <style>
+              body {
+                height: 100%;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 20px;
+                font-size: 81.25%;
+                color: grey;
+              }
+
+              .Logo{
+                width: 300px;
+              }
+              table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-top: 20px;
+              }
+              th, td {
+                  border: 1px solid #ddd;
+                  padding: 8px;
+                  text-align: left;
+              }
+              th {
+                  background-color: #f2f2f2;
+              }
+
+
+              .flex{
+                height: 150px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .Flex{
+                display: flex;
+                justify-content: center;
+                margin: 10px;
+            }
+
+            .Column{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ContenedorLogo{
+                display: flex;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                margin: 0 20px 0 20px;
+            }
+
+            .TStrart{
+                align-items: start;
+            }
+
+            .ContenedorLogoEnd{
+                height: 100%;
+                justify-content: end;
+                align-items: start;
+                margin: 0 20px 0 20px;
+              }
+
+            .AlignStart{
+                align-items: start;
+                margin: 0;
+            }
+
+            .ContenedorP{
+                height: 150px;
+                border-top: 1px solid rgb(60, 113, 159);
+                border-bottom: 1px solid rgb(60, 113, 159);
+                margin: 20px;
+                display:grid;
+                grid-template-columns: auto auto auto;
+            }
+
+            .GRID{
+                margin: 20px;
+                display:grid;
+                grid-template-columns: 20% 20% 20% 20% 20%;
+            }
+
+            .GRID p{
+                margin: 5px;
+  
+            }
+
+            .Contenido{
+                height: 450px;
+            }
+
+            .Total{
+                height: 150px;
+                border-top: 1px solid rgb(60, 113, 159);
+                border-bottom: 1px solid rgb(60, 113, 159);
+                margin:20px;
+            }
+
+            .blue{
+                color:rgb(60, 113, 159);
+            }
+              </style>
+          </head>
+          <body>
+              <div class="flex">
+                <div class="ContenedorLogo">
+                <img class="Logo" src="https://albatroscuracao.com/wp-content/uploads/2019/11/logo-albatros.png" alt="Albatros"/>
+                </div>
+                <div class="Column">
+                    <h3>Albatros International Forwarding</h3>
+                    <p>Veeris A37 <br/> Willemstad <br/> CURACAO</p>
+                    <br/>
+                    Tel: ${"59998692022"}
+                </div>
+
+                <div class="ContenedorLogoEnd column TStrart">
+                    <img class="Logo" src="https://albatroscuracao.com/wp-content/uploads/2019/11/logo-albatros.png"/>
+
+                    <p>Date:<b>${"01/01/0001"}</b></p>
+                </div>
+              </div>
+              <div class="ContenedorP">
+
+                <div class="AlignStart">
+                    <p>Consignee:<br/> <b>${"Alba Teresa Reyes Angeles"}</b></p>
+                </div>
+
+
+                <div class="Flex">
+                    <h3>Driver: <b>${"_______________"}</b></h3>
+                
+                </div>
+
+                <div class="AlignStart">
+                    <p>Prepared by:<br/> <b>${"CLARESSE ROOI"}</b></p>
+                </div>
+              </div>
+
+              <div class="Contenido">
+
+                <div class="GRID">
+                    ${info.map(i => `
+                    <p>${i.Titulo}:<br/> <b>${i.Data}</b></p>
+                  `).join('')}
+                </div>
+              
+              
+                <table>
+                <thead>
+                  <tr>
+                  <th>Marks and Numbers</th>
+                  <th>NUmber of Packa ges</th>
+                  <th>Description Of Comodities</th>
+                  <th>Gross Weight</th>
+                  <th>Chargeable Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${datosDinamicos.map(data => `
+                  <tr>
+                      <td>${data.encabezado1}</td>
+                      <td>${data.encabezado2}</td>
+                      <td>${data.encabezado3}</td>
+                  </tr>
+                  `).join('')}
+              </tbody>
+              </table>
+              </div>
+
+              <div class="Total">
+
+
+              </div>
+              
+              
+          </body>
+          </html>
